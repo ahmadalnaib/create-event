@@ -1,34 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'event-list' }">Event List</router-link> |
-      <router-link :to="{ name: 'event-show' }">Show Event #1</router-link>
-       |
-      <router-link :to="{ name: 'event-create' }">Create Event</router-link>
+    <Navbar />
+    <div class="container">
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
+<script>
+import Navbar from '@/components/Navbar.vue';
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #333;
+  line-height: 1.7;
+  font-size: 1rem;
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul {
+  list-style: none;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  text-decoration: none;
+  color: green;
 }
 </style>
