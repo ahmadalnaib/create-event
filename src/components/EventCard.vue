@@ -6,7 +6,8 @@
     <div class="event-card">
       <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
       <h4 class="title">{{ event.title }}</h4>
-      <span>{{ event.attendess.length }} attending</span>
+      <BaseIcon name="users">{{ event.attendess.length }} attending</BaseIcon>
+      
     </div>
   </router-link>
 </template>
@@ -23,11 +24,11 @@ export default {
         attendess: [
           { id: 'abc123', name: 'Ahmed Habeeb' },
           { id: 'def456', name: 'zozo' },
-          { id: 'def456', name: 'zozo' },
-        ],
-      },
+          { id: 'def456', name: 'zozo' }
+        ]
+      }
     };
-  },
+  }
 };
 </script>
 
@@ -52,6 +53,5 @@ export default {
 
 .event-link {
   text-decoration: none;
-  
 }
 </style>
